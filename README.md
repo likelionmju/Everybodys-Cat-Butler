@@ -1,12 +1,12 @@
 # Everybodys-Cat-Butler
 
-likelion-camp
+Everybodys-Cat-Butler
 ===
 
 📖 Introduction
 ---
 
-This project is a site for Managing Student of Likelion X MJUSEOUL
+This project is a site for posting road cats locations by users. 
 
 🏁 Getting started
 ---
@@ -16,7 +16,7 @@ This project is a site for Managing Student of Likelion X MJUSEOUL
 First of all, clone this repository
 
 ```bash
-$ git clone https://github.com/likelionmju/likelion-camp.git
+$ git clone https://github.com/likelionmju/Everybodys-Cat-Butler.git
 ```
 
 ### 2. create virtual environment
