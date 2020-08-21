@@ -1,5 +1,3 @@
-# Everybodys-Cat-Butler
-
 Everybodys-Cat-Butler
 ===
 
