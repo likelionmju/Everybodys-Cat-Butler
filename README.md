@@ -77,7 +77,8 @@ React와 Djnago REST Framework를 동시에 켜야 하므로 터미널을 스플
 $ cd frontend # 프론트엔드 폴더로 이동
 $ npm start # React 서버 작동 (localhost:3000)
 ``` 
-> React를 시작하기 전에 반드시 npm을 설치해야 한다. [설치방법](https://web-front-end.tistory.com/3)
+> React를 시작하기 전에 반드시 npm을 설치해야 한다. 설치 후에는 재부팅이 필요하다. 
+> [설치방법](https://web-front-end.tistory.com/3)
 ```bash 
 $ cd backend # 백엔드 폴더로 이동
 $ python manage.py runserver # Djnaog REST Framework 작동 (localhost:8000)
