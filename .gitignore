@@ -236,3 +236,5 @@ sketch
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,python,django,react
 
 .idea
+backend/backend.iml
+frontend/frontend.iml
