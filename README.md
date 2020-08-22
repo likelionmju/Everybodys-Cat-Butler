@@ -69,25 +69,55 @@ $ git push origin <branch_name>
 
 > Insert 'backend' or 'frontend' instead of <branch_name>.
 
+### 6. Run Localhost Server
+
+React와 Djnago REST Framework를 동시에 켜야 하므로 터미널을 스플릿 해준다. (Ctrl+Shift+5)
+
+```bash
+$ cd frontend # 프론트엔드 폴더로 이동
+$ npm start # React 서버 작동 (localhost:3000)
+``` 
+> React를 시작하기 전에 반드시 npm을 설치해야 한다. [설치방법](https://web-front-end.tistory.com/3)
+```bash 
+$ cd backend # 백엔드 폴더로 이동
+$ python manage.py runserver # Djnaog REST Framework 작동 (localhost:8000)
+``` 
+> 어떤 것을 먼저 키든 상관 없다. 단, 둘 중에 하나라도 켜지 않으면 페이지가 보이지 않는다.
+
+
 🧐 What's inside?
 ---
     .
-    ├── .config
-    ├── api
-    ├── config
-    ├── page
+    ├── backend
+    │   └── post
+    │   └── reactapi
+    │   └── manage.py 
+    │
+    ├── frontend
+    │   └── public
+    │   └── src
+    │   └── .gitignore
+    │   └── package.json
+    │   └── README.md
+    │   └── yarn.lock
+    │
     ├── .gitignore
-    ├── manage.py
     ├── README.md
     └── requirements.txt
 
-1. `/.config`: setup files to deploy
-2. `/api`: Django REST Framework api app
-3. `/config`: setup files in project
-4. `/page`: page app
-5. `.gitignore`: define what should be ignored in git
-6. `manage.py`: django command-line util
-7. `requirement.txt`: list of pip-packages to install
+1. `/backend`: Backend Directory using "Django REST Framework"
+   - `/post` : API로 호출시킬 TEST APP
+   - `/reactapi` : Django 프로젝트 폴더
+   - `manage.py` : Django command-line util
+2. `/frontend`: Frontend Directory using "React"
+   - `/public` : 가상 DOM에 필요한 폴더
+   - `/src` : React 개발 메인 폴더
+   - `.gitignore` : define what should be ignored in git
+   - `package.json` : 패키지 및 버전 정보
+   - `README.md` : React 설명서
+   - `yarn.lock` : 패키지 잠금 파일
+3. `.gitignore`: define what should be ignored in git
+4. `requirement.txt`: list of pip-packages to install
 
 📝 License
 ---
