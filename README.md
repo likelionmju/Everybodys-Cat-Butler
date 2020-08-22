@@ -14,7 +14,7 @@ This project is a site for posting road cats locations by users.
 First of all, clone this repository
 
 ```bash
-$ git clone https://github.com/likelionmju/Everybodys-Cat-Butler.git
+$ git clone https://github.com/likelionmju/EverybodysCatButler.git
 ```
 
 ### 2. create virtual environment
