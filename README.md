@@ -1,4 +1,4 @@
-Everybodys-Cat-Butler
+EverybodysCatButler
 ===
 
 📖 Introduction
