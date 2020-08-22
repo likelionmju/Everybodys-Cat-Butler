@@ -9,6 +9,7 @@ class App extends Component {
     async componentDidMount() {
         try {
             const res = await fetch('http://127.0.0.1:8000/api/');
+            console.log(res)
             const posts = await res.json();
             this.setState({
                 posts
@@ -21,6 +22,7 @@ class App extends Component {
     render() {
         return (
             <div>
+                {this.state.posts}
                 {this.state.posts.map(item => (
                     <div key={item.id}>
                         <h1>{item.title}</h1>
