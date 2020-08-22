@@ -1,22 +1,22 @@
 //frontend/src/app.js
 import React, { Component } from 'react';
+import axios from 'axios'
+axios.defaults.withCredentials = true
+axios.defaults.baseURL = 'http://127.0.0.1:8000/api/'
 
 class App extends Component {
-    state = {
-        posts: []
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            posts: []
+        };
+    }
+
 
     async componentDidMount() {
-        try {
-            const res = await fetch('http://127.0.0.1:8000/api/');
-            console.log(res)
-            const posts = await res.json();
-            this.setState({
-                posts
-            });
-        } catch (e) {
-            console.log(e);
-        }
+        axios.get(axios.defaults.baseURL)
+            .then(({data}) => this.setState({ posts: data }))
+            .catch(e => console.log(e))
     }
 
     render() {
