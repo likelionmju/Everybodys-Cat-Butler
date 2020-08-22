@@ -125,7 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Script 안에서 리소스 허용할 도메인 추가
-
+CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://localhost:8000',
