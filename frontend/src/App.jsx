@@ -4,7 +4,7 @@ import React, {Component, useEffect, useState} from 'react';
 import ReactDOM from 'react-dom'
 import axios from 'axios'
 //css
-import './App.css'
+import './App.scss'
 //source
 const mapMarker = 'https://img.icons8.com/dusk/64/000000/marker.png'
 
@@ -41,17 +41,24 @@ const App2 = () => {
                 const customOverlay = new kakao.maps.CustomOverlay({
                     map,
                     position: map.getCenter(),
-                    content: '<div style="width: 100px; height: 30px; background-color: black"></div>',
-                    yAnchor: 2.2
+                    content: "<span class='info-window'/>",
+                    yAnchor: 2.15
                 })
                 const geocoder = new kakao.maps.services.Geocoder()
+                geocoder.coord2Address(map.getCenter().getLng(), map.getCenter().getLat(), (result, status) => {
+                    if (status === kakao.maps.services.Status.OK) {
+                        document.getElementsByClassName('info-window')[0].innerText = result[0].address.region_3depth_name + ' ' + result[0].address.main_address_no
+                        console.log(result)
+                    }
+                })
                 kakao.maps.event.addListener(map, 'click', (e) => {
                     const latlng = e.latLng
                     marker.setPosition(latlng);
                     customOverlay.setPosition(latlng)
                     geocoder.coord2Address(latlng.getLng(), latlng.getLat(), (result, status) => {
                         if (status === kakao.maps.services.Status.OK) {
-                            console.log('그런 너를 마주칠까 ' + result[0].address.address_name + '을 못가');
+                            document.getElementsByClassName('info-window')[0].innerText = result[0].address.region_3depth_name + ' ' + result[0].address.main_address_no
+                            console.log(result)
                         }
                     })
                 });
