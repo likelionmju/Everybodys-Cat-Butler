@@ -38,12 +38,19 @@ INSTALLED_APPS = [
     'post',  # 백엔드 app
     'rest_framework',  # 장고 REST 프레임워크
     'corsheaders',  # HTTP 접근제어 규약
+    'account.apps.AccountConfig',
 ]
 
 REST_FRAMEWORK = {  # 장고 REST 프레임워크
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-    ]
+        # 'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES' : (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication' ,
+        'rest_framework.authentication.SessionAuthentication' ,
+        'rest_framework.authentication.BasicAuthentication' ,
+    ),
 }
 
 MIDDLEWARE = [
@@ -130,3 +137,7 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://localhost:8000',
 )
+
+JWT_AUTH = {
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'mysite.utils.my_jwt_response_handler'
+}
