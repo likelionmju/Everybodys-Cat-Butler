@@ -1,12 +1,20 @@
 import React from 'react';
 
 const About = () => {
-  return (
-    <div>
-      <h1>소개</h1>
-      <p>이 프로젝트는 리액트 라우터 기초를 실습해보는 예제 프로젝트랍니다.</p>
-    </div>
-  );
+    const style = {
+        width:'200px',
+        justifyContent: 'center',
+        textAlign:'center',
+        backgroundColor:'red'
+    }
+    return (
+        <div>
+            <div className="align" style={style}>
+                <h1>소개</h1>
+                <p>소개 페이지다!</p>
+            </div>
+        </div>
+    );
 };
 
 export default About;

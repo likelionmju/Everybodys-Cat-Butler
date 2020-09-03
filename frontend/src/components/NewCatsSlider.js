@@ -3,24 +3,21 @@ import ItemsCarousel from 'react-items-carousel';
 import range from 'lodash/range';
 import Card from "react-bootstrap/Card";
 
-function CatCard() {
+const CatCard = () => {
     return (
-        <>
-            <Card className="catCard-basic" style={{width: '18rem'}}>
-                <Card.Img variant="top" src={require('../images/cat1.jpg')}/>
-                <Card.Body>
-                    <Card.Title>구의동</Card.Title>
-                    <Card.Text>
-                        냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥
-                    </Card.Text>
-                </Card.Body>
-            </Card>
-        </>
+        <Card className="catCard-basic" style={{width: '18rem'}}>
+            <Card.Img variant="top" src={require('../images/cat1.jpg')}/>
+            <Card.Body>
+                <Card.Title>구의동</Card.Title>
+                <Card.Text>
+                    냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥냥
+                </Card.Text>
+            </Card.Body>
+        </Card>
     );
 }
 
 export default class NewCatsSlider extends React.Component {
-
     createChildren = n => range(n).map(i => <CatCard key={i}/>);
     changeActiveItem = (activeItemIndex) => this.setState({activeItemIndex});
 
@@ -70,7 +67,7 @@ export default class NewCatsSlider extends React.Component {
                     leftChevron={<img src={require('../images/toLeft.png')}/>}
                     outsideChevron={false}
                 >
-                        {children}
+                    {children}
                 </ItemsCarousel>
             </div>
         );

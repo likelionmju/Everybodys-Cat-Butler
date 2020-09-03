@@ -7,7 +7,7 @@ import './MyNav.css'
 function MyNav() {
     return (
         <>
-            <Navbar bg="black">
+            <Navbar className="shadow-sm" bg="black">
                 <Navbar.Brand as={Link} to="/">
                     <img
                         src={require("../images/logo.png")}
