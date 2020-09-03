@@ -1,10 +1,15 @@
 /*global kakao*/
 //frontend/src/app.jsx
 import React, {Component, useEffect, useState} from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
+import { Route } from 'react-router-dom';
 import axios from 'axios'
 //css
 import './App.scss'
+import MyNav from "./components/MyNav";
+import Home from "./components/Home";
+import About from "./components/About";
+import Guide from "./components/Guide";
 //source
 const mapMarker = 'https://img.icons8.com/dusk/64/000000/marker.png'
 
@@ -150,4 +155,17 @@ class App extends Component {
     }
 }
 
-export default App2;
+class Test extends Component{
+    render() {
+        return (
+            <div>
+                <MyNav/>
+                <Route path="/" exact={true} component={Home}/>
+                <Route path="/about" component={About}/>
+                <Route path="/guide" component={Guide}/>
+            </div>
+        );
+    }
+}
+
+export default Test;
