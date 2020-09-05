@@ -2,14 +2,16 @@
 //frontend/src/app.jsx
 import React, {Component, useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
-import { Route } from 'react-router-dom';
+import {Route, withRouter} from 'react-router-dom';
 import axios from 'axios'
 //css
 import './App.scss'
+//components
 import MyNav from "./components/MyNav";
 import Home from "./components/Home";
 import About from "./components/About";
 import Guide from "./components/Guide";
+
 //source
 const mapMarker = 'https://img.icons8.com/dusk/64/000000/marker.png'
 
@@ -156,7 +158,14 @@ class App extends Component {
 }
 
 class Test extends Component{
+    constructor(props){
+        super(props);
+        this.state = {home: true};
+    }
+
     render() {
+        const home = this.state.home;
+
         return (
             <div>
                 <MyNav/>
@@ -168,4 +177,17 @@ class Test extends Component{
     }
 }
 
-export default Test;
+const Test2 = withRouter(({location}) => {
+    console.log(location.pathname);
+    return(
+        <div>
+            { location.pathname != '/map' && <MyNav/>}
+            <Route path="/" exact={true} component={Home}/>
+            <Route path="/about" component={About}/>
+            <Route path="/guide" component={Guide}/>
+            <Route path="/map" component={App2}/>
+        </div>
+    );
+})
+
+export default Test2;

@@ -4,10 +4,10 @@ import Nav from "react-bootstrap/Nav";
 import { Link } from 'react-router-dom';
 import './MyNav.css'
 
-function MyNav() {
+const MyNav = () => {
     return (
         <>
-            <Navbar className="shadow-sm" bg="black">
+            <Navbar className="shadow-sm" bg="white">
                 <Navbar.Brand as={Link} to="/">
                     <img
                         src={require("../images/logo.png")}

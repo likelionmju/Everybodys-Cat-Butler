@@ -7,28 +7,76 @@
 }
 
 @font-face {
+    font-family: 'TmoneyRoundWindRegular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'yg-jalnan';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
-.contentTitle {
-    width: 312px;
+.content-container{
+    width:100%;
+    margin-left: 10px;
+    margin-bottom: 100px;
+    padding-bottom: 5px;
+}
+
+.content-button{
+    float: right;
+    font-family: 'TmoneyRoundWindRegular';
+}
+
+.content-title {
+    float: left;
+    width: 300px;
     height: 52px;
     font-family: yg-jalnan;
     font-size: 25px;
     font-weight: 800;
     font-stretch: normal;
     font-style: normal;
-    line-height: 4;
     letter-spacing: normal;
     text-align: left;
-    margin-left: 35px;
-    margin-bottom: 25px;
     color: #4e4e4e;
+    border-bottom: 100px solid #F7A1A2;
+    border-bottom-width: 6px;
+    padding-bottom: 40px;
+    border-bottom-style: inset;
 }
 
 .catCard-basic{
     border-radius: 50px;
+}
+
+div.card-body{
+    padding: 10px;
+}
+
+svg{
+    vert-align: middle;
+    border-style: none;
+    width:100%;
+    height: auto;
+}
+
+.container{
+    margin-bottom: 60px;
+}
+
+button.map-button{
+    background-color: #f6c9ca;
+    border-color : #f6c9ca;
+    font-size: 17px;
+    color: #4e4e4e;
+}
+
+button.map-button:hover{
+    background-color: #FFD9DA;
+    color: #4e4e4e;
 }
