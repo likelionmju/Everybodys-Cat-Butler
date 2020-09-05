@@ -11,6 +11,7 @@ import MyNav from "./components/MyNav";
 import Home from "./components/Home";
 import About from "./components/About";
 import Guide from "./components/Guide";
+import Footer from "./components/Footer";
 
 //source
 const mapMarker = 'https://img.icons8.com/dusk/64/000000/marker.png'
@@ -186,6 +187,7 @@ const Test2 = withRouter(({location}) => {
             <Route path="/about" component={About}/>
             <Route path="/guide" component={Guide}/>
             <Route path="/map" component={App2}/>
+            { location.pathname != '/map' && <Footer/>}
         </div>
     );
 })
