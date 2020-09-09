@@ -12,6 +12,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Guide from "./components/Guide";
 import Footer from "./components/Footer";
+import Info_Modify from "./components/Info_Modify";
 
 //source
 const mapMarker = 'https://img.icons8.com/dusk/64/000000/marker.png'
@@ -187,6 +188,7 @@ const Test2 = withRouter(({location}) => {
             <Route path="/about" component={About}/>
             <Route path="/guide" component={Guide}/>
             <Route path="/map" component={App2}/>
+            <Route path="/info_modify" component={Info_Modify}/>
             { location.pathname != '/map' && <Footer/>}
         </div>
     );

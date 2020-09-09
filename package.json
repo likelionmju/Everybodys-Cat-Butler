@@ -1,0 +1,22 @@
+{
+  "name": "everybodyscatbutler",
+  "version": "1.0.0",
+  "description": "EverybodysCatButler\r ===",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/likelionmju/EverybodysCatButler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/likelionmju/EverybodysCatButler/issues"
+  },
+  "homepage": "https://github.com/likelionmju/EverybodysCatButler#readme",
+  "dependencies": {
+    "finalhandler": "^1.1.2"
+  }
+}
