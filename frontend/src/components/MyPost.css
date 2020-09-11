@@ -55,8 +55,8 @@
   height: 150px;
   background-color: #F7F7F4;
   border-radius: 30px;
-  margin-right: 25px;
-  margin-bottom: 25px;
+  margin-right: 30px;
+  margin-bottom: 30px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 17%);
 }
 
@@ -68,6 +68,10 @@
   margin-right: 0;
 }
 
+.post:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 30%);
+}
+
 .post-name {
   font-size: 25px;
   font-weight: 700;
@@ -75,10 +79,12 @@
 }
 
 .post-button {
+  display: inline-block;
   width: 80px;
   height: 30px;
   color: #fff;
   font-weight: 700;
+  line-height: 30px;
   background-color: #F6C9CA;
   border-radius: 10px;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 17%);
@@ -88,17 +94,24 @@
 
 .post-button:focus {
   outline: none;
+  text-decoration: none;
 }
 
 .post-button:hover {
+  color: #fff;
+  text-decoration: none;
   background-color: #FFD9DA;
+}
+
+.post-button:active {
+  background-color: #ffb3b4;
 }
 
 .post-button:last-child {
   margin-right: 0;
 }
 
-@media screen and (max-width: 1191px) {
+@media screen and (max-width: 1200px) {
 
   .post-container {
     max-width: 925px;
