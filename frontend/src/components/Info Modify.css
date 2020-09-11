@@ -1,0 +1,293 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'TmoneyRoundWindExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TmoneyRoundWindRegular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+#information_modify {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    background-color: rgba(255,255,255,1);
+    overflow: hidden;
+}
+
+#information_modify_text {
+    left: 699px;
+    top: 58px;
+    position: absolute;
+    overflow: hidden;
+    width: 523px;
+    height: 46px;
+    text-align: center;
+    font-family: 'TmoneyRoundWindExtraBold';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    color: rgba(45,45,45,1);
+}
+
+#division_line {
+    fill: transparent;
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: round;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    overflow: visible;
+    position: absolute;
+    width: 474px;
+    height: 19px;
+    left: 732.5px;
+    top: 128px;
+    transform: matrix(1,0,0,1,0,0);
+}
+
+#information_modify_div {
+    position: absolute;
+    width: 500px;
+    height: 629px;
+    left: 710px;
+    top: 168px;
+    overflow: visible;
+}
+
+#name_text {
+    left: 0;
+    top: 0;
+    position: absolute;
+    overflow: visible;
+    width: 115px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: 'TmoneyRoundWindRegular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    color: rgba(45,45,45,1);
+}
+
+#name_input {
+    border-radius: 8px;
+    background-color: rgba(247,247,244,1);
+    font-family: 'TmoneyRoundWindRegular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    position: absolute;
+    overflow: visible;
+    width: 500px;
+    height: 60px;
+    left: 0;
+    top: 43px;
+}
+
+#introduce_text {
+    left: 0;
+    top: 142px;
+    position: absolute;
+    overflow: visible;
+    width: 115px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: 'TmoneyRoundWindRegular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    color: rgba(45,45,45,1);
+}
+
+#introduce_input {
+    border-radius: 8px;
+    background-color: rgba(247,247,244,1);
+    font-family: 'TmoneyRoundWindRegular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    position: absolute;
+    overflow: visible;
+    width: 500px;
+    height: 60px;
+    left: 0;
+    top: 187px;
+}
+
+#location_text {
+    left: 0;
+    top: 284px;
+    position: absolute;
+    overflow: visible;
+    width: 140px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: 'TmoneyRoundWindRegular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    color: rgba(45,45,45,1);
+}
+
+#Icon_pin {
+    fill: rgba(45,45,45,1);
+    overflow: visible;
+    position: absolute;
+    width: 14.047px;
+    height: 20.29px;
+    left: 130px;
+    top: 290.432px;
+    transform: matrix(1,0,0,1,0,0);
+}
+
+#location_input {
+    border-radius: 8px;
+    background-color: rgba(247,247,244,1);
+    font-family: 'TmoneyRoundWindRegular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    position: absolute;
+    overflow: visible;
+    width: 500px;
+    height: 60px;
+    left: 0;
+    top: 329px;
+}
+
+#location_left_btn {
+    border-radius: 12px;
+    background-color: rgba(246,201,202,1);
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    position: absolute;
+    overflow: visible;
+    width: 240px;
+    height: 65px;
+    left: 0;
+    top: 419px;
+}
+
+#location_left_total_text {
+    position: absolute;
+    width: 97px;
+    height: 33px;
+    left: 83px;
+    top: 431px;
+    overflow: visible;
+}
+
+#Icon_pin_left_btn {
+    fill: rgba(255,255,255,1);
+    overflow: visible;
+    position: absolute;
+    width: 15px;
+    height: 21.667px;
+    left: 0;
+    top: 7px;
+    transform: matrix(1,0,0,1,0,0);
+}
+
+#location_left_text {
+    left: 27px;
+    top: 0;
+    position: absolute;
+    overflow: visible;
+    width: 76px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: 'TmoneyRoundWindRegular';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    color: rgba(255,255,255,1);
+}
+
+#location_right_btn {
+    border-radius: 12px;
+    background-color: rgba(246,201,202,1);
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    position: absolute;
+    overflow: visible;
+    width: 240px;
+    height: 65px;
+    left: 260px;
+    top: 419px;
+}
+
+#location_right_total_text {
+    position: absolute;
+    width: 97px;
+    height: 33px;
+    left: 328px;
+    top: 431px;
+    overflow: visible;
+}
+
+#Icon_pin_right_btn {
+    fill: rgba(255,255,255,1);
+    overflow: visible;
+    position: absolute;
+    width: 15px;
+    height: 21.667px;
+    left: 0;
+    top: 7px;
+    transform: matrix(1,0,0,1,0,0);
+}
+
+#location_right_text {
+    left: 27px;
+    top: 0;
+    position: absolute;
+    overflow: visible;
+    width: 76px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: 'TmoneyRoundWindRegular';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    color: rgba(255,255,255,1);
+}
+
+#save_btn {
+    border-radius: 12px;
+    background-color: rgba(141,164,207,0.549);
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    position: absolute;
+    overflow: visible;
+    width: 507px;
+    height: 88px;
+    left: 0;
+    top: 565px;
+    font-family: 'TmoneyRoundWindExtraBold';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 33px;
+    color: rgba(255,255,255,1);
+}

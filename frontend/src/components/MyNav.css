@@ -6,8 +6,23 @@
     font-style: normal;
 }
 
-.menufont{
+.menufont {
     color: #4E4E4E;
     font-family: TmoneyRoundWindExtraBold;
     font-size: large;
+}
+
+.footer {
+    background-color: #EBEBEB;
+    height: 200px;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.footerp{
+    font-family: TmoneyRoundWindRegular;
+    text-align:center;
+    vertical-align:middle;
+    padding-top: 90px;
 }
