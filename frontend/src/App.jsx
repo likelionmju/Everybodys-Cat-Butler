@@ -193,7 +193,7 @@ const Test2 = withRouter(({location}) => {
             <Route path="/info_modify" component={Info_Modify}/>
             <Route path="/mypost" component={MyPost}/>
             <Route path="/detailpost/:id" component={DetailPost} />
-            { location.pathname != '/map' && <Footer/>}
+            {/* { location.pathname != '/map' && <Footer/>} */}
         </div>
     );
 })
