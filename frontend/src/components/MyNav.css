@@ -20,9 +20,28 @@
     width: 100%;
 }
 
-.footerp{
+.footerp {
     font-family: TmoneyRoundWindRegular;
-    text-align:center;
-    vertical-align:middle;
+    text-align: center;
+    vertical-align: middle;
     padding-top: 90px;
 }
+
+.myinfo_dropdown {
+    font-family: 'TmoneyRoundWindExtraBold';
+    font-size: larger;
+    background: linear-gradient(104deg, #f7a1a2 11%, #8da4cf 121%);
+    -webkit-background-clip: text;
+    /*-webkit-text-fill-color: transparent;*/
+    color: black;
+}
+
+.dropdown-toggle{
+    color: #f7a1a2;
+}
+
+.dropdown-toggle:hover{
+    color: #f6c9ca;
+}
+
+
