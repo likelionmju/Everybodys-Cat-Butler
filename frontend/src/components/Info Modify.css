@@ -173,12 +173,64 @@
     margin-right: 20px;
 }
 
+#location_left_total_text {
+    position: fixed;
+    top: 15px;
+    margin-left: 70px;
+}
+
+#Icon_pin_left_btn {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    fill: rgba(255,255,255,1);
+    margin-top: 4px;
+}
+
+#location_left_text {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    margin-left: 35px;
+    font-family: 'TmoneyRoundWindRegular';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 23px;
+    color: rgba(255,255,255,1);
+}
+
 #location_right_btn {
     border-radius: 12px;
     background-color: rgba(246,201,202,1);
     filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
     width: 240px;
     height: 65px;
+}
+
+#location_right_total_text {
+    position: fixed;
+    top: 15px;
+    margin-left: 320px;
+}
+
+#Icon_pin_right_btn {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    fill: rgba(255,255,255,1);
+    margin-top: 4px;
+}
+
+#location_right_text {
+    position: absolute;
+    width: 90px;
+    height: 30px;
+    margin-left: 35px;
+    font-family: 'TmoneyRoundWindRegular';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 23px;
+    color: rgba(255,255,255,1);
 }
 
 #save_btn {
@@ -197,10 +249,10 @@
 }
 
 #information_modify_div {
-position: absolute;
-  left: 50%;
-  right: 50%;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
     width: 500px;
     height: 750px;
     margin-top: 480px;
@@ -214,67 +266,93 @@ position: absolute;
         height: 620px;
         margin-top: 380px;
     }
-    
+
     #information_modify_text {
         width: 300px;
         height: 46px;
         font-size: 25px;
     }
-    
+
     #division_line {
         margin-top: 3px;
         width: 270px;
     }
-    
+
     #name_text {
         margin-top: 10px;
         font-size: 20px;
     }
-    
+
     #name_input {
         width: 300px;
         height: 50px;
         font-size: 17px;
     }
-    
+
     #introduce_text {
         font-size: 20px;
     }
-    
+
     #introduce_input {
         width: 300px;
         height: 50px;
         font-size: 17px;
     }
-    
+
     #location_text {
         font-size: 20px;
     }
-    
+
     #location_input {
         width: 300px;
         height: 50px;
     }
-    
+
     #location_btn {
         width: 300px;
         height: 55px;
     }
-    
+
     #location_left_btn {
         width: 145px;
         height: 55px;
         margin-right: 10px;
     }
-    
+
+    #location_left_total_text {
+        top: 10px;
+        margin-left: 31px;
+    }
+
+    #Icon_pin_left_btn {
+        margin-top: 2px;
+    }
+
+    #location_left_text {
+        font-size: 20px;
+    }
+
     #location_right_btn {
         width: 145px;
         height: 55px;
     }
-    
+
+    #location_right_total_text {
+        top: 10px;
+        margin-left: 179px;
+    }
+
+    #Icon_pin_right_btn {
+        margin-top: 2px;
+    }
+
+    #location_right_text {
+        font-size: 20px;
+    }
+
     #save_btn {
         width: 300px;
         height: 70px;
         font-size: 28px;
     }
-  }
+}
