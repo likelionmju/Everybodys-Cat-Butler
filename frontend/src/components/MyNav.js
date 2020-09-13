@@ -33,12 +33,12 @@ const MyNav = () => {
                     {/*        />*/}
                     {/*    </Nav.Link>*/}
                     {/*</Nav>*/}
-                    <NavDropdown drop='left' className="myinfo_dropdown ml-auto" title="닉네임" id="collasible-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                    <NavDropdown drop='left' className="myinfo_dropdown ml-auto" title="나오니 님" id="collasible-nav-dropdown">
+                        <NavDropdown.Item href="/mypost">내 게시글</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.2">냥이 추가하기</NavDropdown.Item>
                         <NavDropdown.Divider/>
-                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                        <NavDropdown.Item href="/info_modify">내 정보 수정</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.4">로그아웃</NavDropdown.Item>
                     </NavDropdown>
                     <div></div>
                 </Navbar.Collapse>
