@@ -14,7 +14,8 @@ import Guide from "./components/Guide";
 import Footer from "./components/Footer";
 import Info_Modify from "./components/Info_Modify";
 import MyPost from "./components/MyPost";
-import DetailPost from "./components/DetailPost"
+import DetailPost from "./components/DetailPost";
+import Register from "./components/Register";
 
 //source
 const mapMarker = 'https://img.icons8.com/dusk/64/000000/marker.png'
@@ -63,7 +64,7 @@ const App2 = () => {
                 geocoder.coord2Address(map.getCenter().getLng(), map.getCenter().getLat(), (result, status) => {
                     if (status === kakao.maps.services.Status.OK) {
                         address = result[0].address.region_3depth_name + ' ' + result[0].address.main_address_no;
-                        content = "<div class='info-window'>"+"<a href='#' class='info-register'>등록하기</a>"+"<span class='info'>"+address+"</span>"+"</div>";
+                        content = "<div class='info-window'>"+"<a href='/register/"+address+"' class='info-register'>등록하기</a>"+"<span class='info'>"+address+"</span>"+"</div>";
                         customOverlay.setContent(content);
                         console.log(result)
                     }
@@ -75,7 +76,7 @@ const App2 = () => {
                     geocoder.coord2Address(latlng.getLng(), latlng.getLat(), (result, status) => {
                         if (status === kakao.maps.services.Status.OK) {
                             address = result[0].address.region_3depth_name + ' ' + result[0].address.main_address_no;
-                            content = "<div class='info-window'>"+"<a href='#' class='info-register'>등록하기</a>"+"<span class='info'>"+address+"</span>"+"</div>";
+                            content = "<div class='info-window'>"+"<a href='/register/"+address+"' class='info-register'>등록하기</a>"+"<span class='info'>"+address+"</span>"+"</div>";
                             customOverlay.setContent(content);
                             console.log(result)
                         }
@@ -201,6 +202,7 @@ const Test2 = withRouter(({location}) => {
             <Route path="/info_modify" component={Info_Modify}/>
             <Route path="/mypost" component={MyPost}/>
             <Route path="/detailpost/:id" component={DetailPost} />
+            <Route path="/register/:address" component={Register} />
              { location.pathname != '/map' && <Footer/>}
         </div>
     );
