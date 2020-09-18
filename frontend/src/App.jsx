@@ -49,16 +49,22 @@ const App2 = () => {
 
                 marker.setMap(map)
 
+                var address;
+
+                var content;
+
                 const customOverlay = new kakao.maps.CustomOverlay({
                     map,
                     position: map.getCenter(),
-                    content: "<span class='info-window'/>",
+                    content: content,
                     yAnchor: 2.15
                 })
                 const geocoder = new kakao.maps.services.Geocoder()
                 geocoder.coord2Address(map.getCenter().getLng(), map.getCenter().getLat(), (result, status) => {
                     if (status === kakao.maps.services.Status.OK) {
-                        document.getElementsByClassName('info-window')[0].innerText = result[0].address.region_3depth_name + ' ' + result[0].address.main_address_no
+                        address = result[0].address.region_3depth_name + ' ' + result[0].address.main_address_no;
+                        content = "<div class='info-window'>"+"<a href='#' class='info-register'>등록하기</a>"+"<span class='info'>"+address+"</span>"+"</div>";
+                        customOverlay.setContent(content);
                         console.log(result)
                     }
                 })
@@ -68,7 +74,9 @@ const App2 = () => {
                     customOverlay.setPosition(latlng)
                     geocoder.coord2Address(latlng.getLng(), latlng.getLat(), (result, status) => {
                         if (status === kakao.maps.services.Status.OK) {
-                            document.getElementsByClassName('info-window')[0].innerText = result[0].address.region_3depth_name + ' ' + result[0].address.main_address_no
+                            address = result[0].address.region_3depth_name + ' ' + result[0].address.main_address_no;
+                            content = "<div class='info-window'>"+"<a href='#' class='info-register'>등록하기</a>"+"<span class='info'>"+address+"</span>"+"</div>";
+                            customOverlay.setContent(content);
                             console.log(result)
                         }
                     })
