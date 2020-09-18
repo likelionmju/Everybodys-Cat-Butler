@@ -22,8 +22,8 @@ const MyNav = () => {
                 <Navbar.Collapse>
                     <Nav.Link as={Link} to="/about"><span className="menufont">소개</span></Nav.Link>
                     <Nav.Link as={Link} to="/guide"><span className="menufont">가이드라인</span></Nav.Link>
-                    <Nav.Link as={Link} to="/info_modify"><span className="menufont">정보 수정</span></Nav.Link>
-                    <Nav.Link as={Link} to="/mypost"><span className="menufont">나의 게시글</span></Nav.Link>
+                    {/*<Nav.Link as={Link} to="/info_modify"><span className="menufont">정보 수정</span></Nav.Link>*/}
+                    {/*<Nav.Link as={Link} to="/mypost"><span className="menufont">나의 게시글</span></Nav.Link>*/}
                     {/*<Nav className="ml-auto">*/}
                     {/*    <Nav.Link href="#login">*/}
                     {/*        <img*/}
