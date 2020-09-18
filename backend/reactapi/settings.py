@@ -43,8 +43,8 @@ INSTALLED_APPS = [
 
 REST_FRAMEWORK = {  # 장고 REST 프레임워크
     'DEFAULT_PERMISSION_CLASSES': [
-        # 'rest_framework.permissions.AllowAny',
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
+        #'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES' : (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication' ,
