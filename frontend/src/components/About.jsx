@@ -8,11 +8,8 @@ const About = () => {
         backgroundColor:'red'
     }
     return (
-        <div>
-            <div className="align" style={style}>
-                <h1>소개</h1>
-                <p>소개 페이지다!</p>
-            </div>
+        <div className="container">
+            <img style={{textAlign:'center', marginTop:'90px'}} src={require('../images/about.png')} width='60%'/>
         </div>
     );
 };

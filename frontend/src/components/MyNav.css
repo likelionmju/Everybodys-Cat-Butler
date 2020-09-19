@@ -44,4 +44,8 @@
     color: #f6c9ca;
 }
 
+a.dropdown-item:active{
+    background-color: #8DA4CF;
+}
+
 

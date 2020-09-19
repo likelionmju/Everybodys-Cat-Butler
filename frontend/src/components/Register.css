@@ -11,7 +11,7 @@
   padding: 0;
 }
 
-.detail-post-container {
+.register-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -24,7 +24,7 @@
   color: #4e4e4e;
 }
 
-.detail-post-title {
+.register-title {
   font-family: 'yg-jalnan';
   font-size: 30px;
   width: 450px;
@@ -33,14 +33,14 @@
   border-bottom: 1px solid #4e4e4e;
 }
 
-.detail-post-form {
+.register-form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
-.detail-post-form label,
+.register-form label,
 .upload-img-label {
   font-size: 25px;
   font-weight: 600;
@@ -77,7 +77,7 @@
   background-color: #ffb3b4;
 }
 
-#detail-post-img {
+#register-img {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -106,14 +106,14 @@
   outline: none;
 }
 
-#detail-post-name,
-#detail-post-date,
-#detail-post-address {
+#register-name,
+#register-date,
+#register-address {
   height: 60px;
 }
 
-#detail-post-desc,
-#detail-post-remark {
+#register-desc,
+#register-remark {
   height: 120px;
   resize: none;
   padding: 15px 15px;
