@@ -81,7 +81,7 @@
     margin-top: 30px;
 }
 
-.input {
+#name_input {
     border-radius: 8px;
     background-color: rgba(247,247,244,1);
     font-family: 'TmoneyRoundWindRegular';
@@ -97,8 +97,8 @@
     transition: box-shadow 300ms;
   }
   
-  .input:focus,
-  .input:hover {
+  #name_input:focus,
+  #name_input:hover {
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 30%);
     outline: none;
   }
@@ -116,6 +116,28 @@
     color: rgba(45,45,45,1);
 }
 
+#introduce_input {
+    border-radius: 8px;
+    background-color: rgba(247,247,244,1);
+    font-family: 'TmoneyRoundWindRegular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    overflow: visible;
+    width: 500px;
+    height: 60px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 17%);
+    padding: 10px 15px;
+    margin-bottom: 25px;
+    transition: box-shadow 300ms;
+  }
+  
+  #introduce_input:focus,
+  #introduce_input:hover {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 30%);
+    outline: none;
+  }
+
 #location_text {
     margin-top: 30px;
     overflow: visible;
@@ -128,6 +150,28 @@
     font-size: 25px;
     color: rgba(45,45,45,1);
 }
+
+#location_input {
+    border-radius: 8px;
+    background-color: rgba(247,247,244,1);
+    font-family: 'TmoneyRoundWindRegular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    overflow: visible;
+    width: 500px;
+    height: 60px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 17%);
+    padding: 10px 15px;
+    margin-bottom: 25px;
+    transition: box-shadow 300ms;
+  }
+  
+  #location_input:focus,
+  #location_input:hover {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 30%);
+    outline: none;
+  }
 
 #Icon_pin {
     fill: rgba(45,45,45,1);
@@ -270,7 +314,7 @@
         font-size: 20px;
     }
 
-    .input {
+    #name_input {
         width: 300px;
         height: 50px;
         font-size: 17px;
@@ -280,9 +324,21 @@
         font-size: 20px;
     }
 
+    #introduce_input {
+        width: 300px;
+        height: 50px;
+        font-size: 17px;
+      }
+
     #location_text {
         font-size: 20px;
     }
+
+    #location_input {
+        width: 300px;
+        height: 50px;
+        font-size: 17px;
+      }
 
     #location_btn {
         width: 300px;
