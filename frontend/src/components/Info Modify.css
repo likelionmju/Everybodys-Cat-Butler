@@ -25,6 +25,10 @@
     border: none;
 
 }
+#total {
+    width: auto;
+    height: 1000px;
+}
 
 #information_modify_div {
     position: absolute;
@@ -77,20 +81,27 @@
     margin-top: 30px;
 }
 
-#name_input {
+.input {
     border-radius: 8px;
     background-color: rgba(247,247,244,1);
     font-family: 'TmoneyRoundWindRegular';
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
-    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
     overflow: visible;
     width: 500px;
     height: 60px;
-    margin-top: 5px;
-
-}
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 17%);
+    padding: 10px 15px;
+    margin-bottom: 25px;
+    transition: box-shadow 300ms;
+  }
+  
+  .input:focus,
+  .input:hover {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 30%);
+    outline: none;
+  }
 
 #introduce_text {
     margin-top: 30px;
@@ -103,20 +114,6 @@
     font-weight: normal;
     font-size: 25px;
     color: rgba(45,45,45,1);
-}
-
-#introduce_input {
-    margin-top: 5px;
-    border-radius: 8px;
-    background-color: rgba(247,247,244,1);
-    font-family: 'TmoneyRoundWindRegular';
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
-    overflow: visible;
-    width: 500px;
-    height: 60px;
 }
 
 #location_text {
@@ -140,20 +137,6 @@
     left: 130px;
     top: 240.432px;
     transform: matrix(1,0,0,1,0,0);
-}
-
-#location_input {
-    margin-top: 5px;
-    border-radius: 8px;
-    background-color: rgba(247,247,244,1);
-    font-family: 'TmoneyRoundWindRegular';
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
-    overflow: visible;
-    width: 500px;
-    height: 60px;
 }
 
 #location_btn {
@@ -261,6 +244,10 @@
 
 @media screen and (max-width: 790px) {
 
+    #total {
+        height: 850px;
+    }
+
     #information_modify_div {
         width: 300px;
         height: 620px;
@@ -283,29 +270,18 @@
         font-size: 20px;
     }
 
-    #name_input {
+    .input {
         width: 300px;
         height: 50px;
         font-size: 17px;
-    }
+      }
 
     #introduce_text {
         font-size: 20px;
     }
 
-    #introduce_input {
-        width: 300px;
-        height: 50px;
-        font-size: 17px;
-    }
-
     #location_text {
         font-size: 20px;
-    }
-
-    #location_input {
-        width: 300px;
-        height: 50px;
     }
 
     #location_btn {
