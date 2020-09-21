@@ -3,7 +3,8 @@ import './Info Modify.css';
 
 const Info_Modify = () => {
     return (
-        <div id="information_modify_div">
+        <div id="total">
+            <div id="information_modify_div">
             <div id="information_modify_text">
                 <span>정보 수정</span>
             </div>
@@ -31,7 +32,7 @@ const Info_Modify = () => {
                 </svg>
             </div>
 
-            <input type="text" id="location_input"></input>
+            <input type="text"  id="location_input"></input>
 
             <div id="location_btn">
                 <input type="button" id="location_left_btn"></input>
@@ -66,6 +67,7 @@ const Info_Modify = () => {
 
             <input type="button" id="save_btn" value="저장하기"></input>
 
+        </div>
         </div>
 
     );
