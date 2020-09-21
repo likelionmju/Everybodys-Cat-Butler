@@ -2,7 +2,7 @@
 //frontend/src/app.jsx
 import React, {Component, useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
-import {Route, withRouter} from 'react-router-dom';
+import {Route, withRouter, Redirect} from 'react-router-dom';
 import axios from 'axios'
 //css
 import './App.scss'
@@ -191,10 +191,12 @@ class Test extends Component{
 }
 
 const Test2 = withRouter(({location}) => {
-    console.log(location.pathname);
+    const accessToken = location.search.split('=')[1]
+    console.log(accessToken)
     return(
-        <div>
-            { location.pathname != '/map' && <MyNav/>}
+        <>
+            { location.pathname != '/map' && <MyNav token={location.state?.accessToken}/>}
+            <Redirect from="/loginRedirect" to={{pathname: '/', state: {accessToken}}} exact/>
             <Route path="/" exact={true} component={Home}/>
             <Route path="/about" component={About}/>
             <Route path="/guide" component={Guide}/>
@@ -204,7 +206,7 @@ const Test2 = withRouter(({location}) => {
             <Route path="/detailpost/:id" component={DetailPost} />
             <Route path="/register/:address" component={Register} />
              { location.pathname != '/map' && <Footer/>}
-        </div>
+        </>
     );
 })
 

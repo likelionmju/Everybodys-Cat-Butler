@@ -1,3 +1,5 @@
+/* global Kakao*/
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -9,6 +11,9 @@ import { BrowserRouter } from 'react-router-dom';
 // import 'bootstrap-css-only/css/bootstrap.min.css';
 // import 'mdbreact/dist/css/mdb.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+Kakao.init('fe79ac4144891b3a3a25c0b33f654337');
+console.log(Kakao.isInitialized());
 
 ReactDOM.render(
   <BrowserRouter>
