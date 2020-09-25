@@ -36,17 +36,18 @@ class DetailPost extends React.Component {
   render() {
     return (
       <div className="detail-post-container">
-        <h1 className="detail-post-title">게시글 수정하기</h1>
+        <h1 className="detail-post-title">냥이 수정하기</h1>
         <form method="Post" className="detail-post-form" onSubmit={this.onSubmit}>
           <input type="text" className="upload-img-label" value="사진" disabled />
+          <div className="img-container"></div>
           <label htmlFor="detail-post-img" className="upload-img">이미지 업로드</label>
           <input type="file" id="detail-post-img" name="img" accept="image/jpg, image/png"/>
           <label htmlFor="detail-post-name">이름</label>
-          <input type="text" id="detail-post-name" className="input" name="name" value={this.state.name} onChange={this.handleChange} />
+          <input type="text" id="detail-post-name" className="input" name="name" value={this.state.name} onChange={this.handleChange} required />
           <label htmlFor="detail-post-date">발견 날짜</label>
-          <input type="date" id="detail-post-date" className="input" name="date" value={this.state.date} onChange={this.handleChange} />
+          <input type="date" id="detail-post-date" className="input" name="date" value={this.state.date} onChange={this.handleChange} readOnly />
           <label htmlFor="detail-post-address">주소</label>
-          <input type="text" id="detail-post-address" className="input" name="address" value={this.state.address} onChange={this.handleChange} />
+          <input type="text" id="detail-post-address" className="input" name="address" value={this.state.address} onChange={this.handleChange} readOnly />
           <label htmlFor="detail-post-desc">설명</label>
           <textarea name="" id="detail-post-desc" className="input" name="desc" value={this.state.desc} onChange={this.handleChange}></textarea>
           <label htmlFor="detail-post-remark">특이사항</label>
