@@ -11,10 +11,10 @@ class PostSerializer(serializers.ModelSerializer):
             'id',
             'image',
             'name',
-            'created_at',
-            'addr',
-            'content',
-            'detail',         
+            'date',
+            'address',
+            'desc',
+            'remark',         
         )
-        read_only_fields = ('created_at',)
+        read_only_fields = ('date',)
 
