@@ -16,17 +16,17 @@ export default class Register extends React.Component {
       date: date,
       address: address,
       desc: '',
-      remark: ''
+      remark: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setImage = this.setImage.bind(this);
   }
   handleChange(event) {
-    const {name, value} = event.target
+    const { name, value } = event.target;
     this.setState({
-      [name]: value
-    })
+      [name]: value,
+    });
     console.log(name, value);
     console.log(this.state);
   }
@@ -34,8 +34,8 @@ export default class Register extends React.Component {
     event.preventDefault();
     console.log(this.state);
     this.state.onSubmit(
-      this.state.img,
       this.state.id,
+      this.state.img,
       this.state.name,
       this.state.date,
       this.state.address,
@@ -72,20 +72,27 @@ export default class Register extends React.Component {
       <div className="register-container">
         <h1 className="register-title">냥이 등록하기</h1>
         <form action="Post" className="register-form" onSubmit={this.onSubmit} >
+          {/* 사진 */}
           <input type="text" className="upload-img-label" value="사진" disabled />
           <div className="img-container"></div>
           <label htmlFor="register-img" className="upload-img">이미지 업로드</label>
           <input type="file" id="register-img" name="img" accept="image/*" onChange={this.setImage} required />
+          {/* 이름 */}
           <label htmlFor="register-name">이름</label>
           <input type="text" id="register-name" className="input" name="name" onChange={this.handleChange} onChange={this.handleChange} required />
+          {/* 발견 날짜 */}
           <label htmlFor="register-date">발견 날짜</label>
           <input type="date" id="register-date" className="input" name="date" value={this.state.date} onChange={this.handleChange} required />
+          {/* 주소 */}
           <label htmlFor="register-address">주소</label>
           <input type="text" id="register-address" className="input" name="address" value={this.state.address} onChange={this.handleChange} readOnly />
+          {/* 설명 */}
           <label htmlFor="register-desc">설명</label>
           <textarea name="" id="register-desc" className="input" name="desc" onChange={this.handleChange}></textarea>
+          {/* 특이사항 */}
           <label htmlFor="register-remark">특이사항</label>
           <textarea name="" id="register-remark" className="input" name="remark" onChange={this.handleChange}></textarea>
+          {/* 등록 버튼 */}
           <button type="submit" className="submit-btn">등록하기</button>
         </form>
       </div>
