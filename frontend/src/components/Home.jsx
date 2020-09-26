@@ -5,6 +5,7 @@ import './Home.css';
 import Ranking from "./Ranking";
 
 const Home = () => {
+    console.log('home')
     return(
         <div style={{width:'100%', textAlign:'center'}}>
             <NewCatsSlider />

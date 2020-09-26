@@ -1,4 +1,4 @@
-/*global kakao*/
+/*global kakao, Kakao*/
 //frontend/src/app.jsx
 import React, {Component, useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
@@ -191,12 +191,22 @@ class Test extends Component{
 }
 
 const Test2 = withRouter(({location}) => {
-    const accessToken = location.search.split('=')[1]
-    console.log(accessToken)
+    if (location.state?.accessToken) {
+        Kakao.Auth.setAccessToken(location.state.accessToken)
+        Kakao.API.request({
+            url: '/v2/user/me',
+            success: function(response) {
+                console.log(response);
+            },
+            fail: function(error) {
+                console.log(error);
+            }
+        });
+    }
     return(
         <>
-            { location.pathname != '/map' && <MyNav token={location.state?.accessToken}/>}
-            <Redirect from="/loginRedirect" to={{pathname: '/', state: {accessToken}}} exact/>
+            <Redirect from="/loginRedirect" to={{pathname: '/', state: {accessToken: location.search.split('=')[1]}}} exact/>
+            { location.pathname != '/map' && <MyNav/>}
             <Route path="/" exact={true} component={Home}/>
             <Route path="/about" component={About}/>
             <Route path="/guide" component={Guide}/>
@@ -205,7 +215,7 @@ const Test2 = withRouter(({location}) => {
             <Route path="/mypost" component={MyPost}/>
             <Route path="/detailpost/:id" component={DetailPost} />
             <Route path="/register/:address" component={Register} />
-             { location.pathname != '/map' && <Footer/>}
+            { location.pathname != '/map' && <Footer/>}
         </>
     );
 })

@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 import './MyNav.css'
 import NavDropdown from "react-bootstrap/NavDropdown";
 
-const MyNav = ({token}) => {
+const MyNav = () => {
     return (
         <>
             <Navbar className="shadow-sm" bg="white">
@@ -33,6 +33,7 @@ const MyNav = ({token}) => {
                                 onClick={() => Kakao.Auth.authorize({
                                     redirectUri: 'http://localhost:3000/loginRedirect'
                                 })}
+                                style={{cursor: 'pointer'}}
                             />
                     </Nav>
                     {/*<NavDropdown drop='left' className="myinfo_dropdown ml-auto" title="나오니 님" id="collasible-nav-dropdown">*/}
@@ -42,7 +43,6 @@ const MyNav = ({token}) => {
                     {/*    <NavDropdown.Item href="/info_modify">내 정보 수정</NavDropdown.Item>*/}
                     {/*    <NavDropdown.Item href="#action/3.4">로그아웃</NavDropdown.Item>*/}
                     {/*</NavDropdown>*/}
-                    <div></div>
                 </Navbar.Collapse>
             </Navbar>
         </>
