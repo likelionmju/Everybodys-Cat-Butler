@@ -9,6 +9,5 @@ from . import views
 urlpatterns = [
     path('', views.ListPost.as_view()),
     path('<int:pk>/', views.DetailPost.as_view()),
-    path('kakao/login', views.kakao_login, name='kakao_login'),
     path('kakao/token', views.user_access_token, name='kakao_access_token'),
 ]

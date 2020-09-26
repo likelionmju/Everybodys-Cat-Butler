@@ -5,7 +5,9 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import {Link} from 'react-router-dom';
 import './MyNav.css'
-import NavDropdown from "react-bootstrap/NavDropdown";
+import axios from 'axios'
+
+axios.defaults.withCredentials = true
 
 const MyNav = () => {
     return (
@@ -26,15 +28,15 @@ const MyNav = () => {
                     <Nav.Link as={Link} to="/info_modify"><span className="menufont">정보 수정</span></Nav.Link>
                     <Nav.Link as={Link} to="/mypost"><span className="menufont">나의 게시글</span></Nav.Link>
                     <Nav className="ml-auto">
-                            <img
-                                src={require("../images/login.png")}
-                                width="100"
-                                height="60"
-                                onClick={() => Kakao.Auth.authorize({
-                                    redirectUri: 'http://localhost:3000/loginRedirect'
-                                })}
-                                style={{cursor: 'pointer'}}
-                            />
+                        <img
+                            src={require("../images/login.png")}
+                            width="100"
+                            height="60"
+                            onClick={() => Kakao.Auth.authorize({
+                                'redirectUri': 'http://localhost:3000'
+                            })}
+                            style={{cursor: 'pointer'}}
+                        />
                     </Nav>
                     {/*<NavDropdown drop='left' className="myinfo_dropdown ml-auto" title="나오니 님" id="collasible-nav-dropdown">*/}
                     {/*    <NavDropdown.Item href="/mypost">내 게시글</NavDropdown.Item>*/}

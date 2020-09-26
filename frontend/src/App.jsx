@@ -1,8 +1,7 @@
 /*global kakao, Kakao*/
 //frontend/src/app.jsx
 import React, {Component, useEffect, useState} from 'react';
-import ReactDOM from 'react-dom';
-import {Route, withRouter, Redirect} from 'react-router-dom';
+import {Route, withRouter} from 'react-router-dom';
 import axios from 'axios'
 //css
 import './App.scss'
@@ -20,15 +19,11 @@ import Register from "./components/Register";
 //source
 const mapMarker = 'https://img.icons8.com/dusk/64/000000/marker.png'
 
-const baseURL = axios.defaults.baseURL = 'http://127.0.0.1:8000/api/'
 axios.defaults.withCredentials = true
 
 const App2 = () => {
     const [posts, setPosts] = useState([])
     useEffect(() => {
-        axios.get(baseURL)
-            .then((res) => setPosts(res.data))
-            .catch((e) => console.log(e))
         const mapScript = document.getElementById('kakao-map')
         mapScript.addEventListener('load', () => {
             kakao.maps.load(() => {
@@ -64,7 +59,7 @@ const App2 = () => {
                 geocoder.coord2Address(map.getCenter().getLng(), map.getCenter().getLat(), (result, status) => {
                     if (status === kakao.maps.services.Status.OK) {
                         address = result[0].address.region_3depth_name + ' ' + result[0].address.main_address_no;
-                        content = "<div class='info-window'>"+"<a href='/register/"+address+"' class='info-register'>등록하기</a>"+"<span class='info'>"+address+"</span>"+"</div>";
+                        content = "<div class='info-window'>" + "<a href='/register/" + address + "' class='info-register'>등록하기</a>" + "<span class='info'>" + address + "</span>" + "</div>";
                         customOverlay.setContent(content);
                         console.log(result)
                     }
@@ -76,7 +71,7 @@ const App2 = () => {
                     geocoder.coord2Address(latlng.getLng(), latlng.getLat(), (result, status) => {
                         if (status === kakao.maps.services.Status.OK) {
                             address = result[0].address.region_3depth_name + ' ' + result[0].address.main_address_no;
-                            content = "<div class='info-window'>"+"<a href='/register/"+address+"' class='info-register'>등록하기</a>"+"<span class='info'>"+address+"</span>"+"</div>";
+                            content = "<div class='info-window'>" + "<a href='/register/" + address + "' class='info-register'>등록하기</a>" + "<span class='info'>" + address + "</span>" + "</div>";
                             customOverlay.setContent(content);
                             console.log(result)
                         }
@@ -120,9 +115,6 @@ class App extends Component {
     }
 
     async componentDidMount() {
-        axios.get(baseURL)
-            .then((res) => this.setState({posts: res.data}))
-            .catch((e) => console.log(e))
         const mapScript = document.getElementById('kakao-map')
         mapScript.addEventListener('load', () => {
             kakao.maps.load(() => {
@@ -170,8 +162,8 @@ class App extends Component {
     }
 }
 
-class Test extends Component{
-    constructor(props){
+class Test extends Component {
+    constructor(props) {
         super(props);
         this.state = {home: true};
     }
@@ -191,31 +183,40 @@ class Test extends Component{
 }
 
 const Test2 = withRouter(({location}) => {
-    if (location.state?.accessToken) {
-        Kakao.Auth.setAccessToken(location.state.accessToken)
-        Kakao.API.request({
-            url: '/v2/user/me',
-            success: function(response) {
-                console.log(response);
-            },
-            fail: function(error) {
-                console.log(error);
-            }
-        });
+    const params = new URLSearchParams(location.search)
+    if (params.has('code')) {
+        const data = {
+            'grant_type': 'authorization_code',
+            'client_id': '56a0557bbe0416b25abbf92454373658',
+            'redirect_uri': 'http://localhost:3000',
+            'code': params.get('code')
+        }
+        params.delete('code')
+        axios.post('http://localhost:8000/kakao/token', data).then(r => {
+            Kakao.Auth.setAccessToken(r.data.access_token)
+            Kakao.API.request({
+                url: '/v2/user/me',
+                success: function (response) {
+                    console.log(response);
+                },
+                fail: function (error) {
+                    console.log(error);
+                }
+            });
+        })
     }
-    return(
+    return (
         <>
-            <Redirect from="/loginRedirect" to={{pathname: '/', state: {accessToken: location.search.split('=')[1]}}} exact/>
-            { location.pathname != '/map' && <MyNav/>}
+            {location.pathname != '/map' && <MyNav/>}
             <Route path="/" exact={true} component={Home}/>
             <Route path="/about" component={About}/>
             <Route path="/guide" component={Guide}/>
             <Route path="/map" component={App2}/>
             <Route path="/info_modify" component={Info_Modify}/>
             <Route path="/mypost" component={MyPost}/>
-            <Route path="/detailpost/:id" component={DetailPost} />
-            <Route path="/register/:address" component={Register} />
-            { location.pathname != '/map' && <Footer/>}
+            <Route path="/detailpost/:id" component={DetailPost}/>
+            <Route path="/register/:address" component={Register}/>
+            {location.pathname != '/map' && <Footer/>}
         </>
     );
 })

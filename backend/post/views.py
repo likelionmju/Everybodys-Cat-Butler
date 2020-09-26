@@ -1,5 +1,5 @@
 from django.shortcuts import redirect
-from requests import post
+from requests import post, get
 from rest_framework import generics
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.decorators import api_view
@@ -33,22 +33,7 @@ class DetailPost(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = "id"
 
 
-@api_view(['GET'])
-def kakao_login(request):
-    return redirect(
-        'https://kauth.kakao.com/oauth/authorize?client_id=56a0557bbe0416b25abbf92454373658&redirect_uri=http://localhost:8000/kakao/token&response_type=code')
-
-
-@api_view(['GET'])
+@api_view(['POST'])
 def user_access_token(request):
-    if 'code' in request.query_params:
-        data = {
-            'grant_type': 'authorization_code',
-            'client_id': '56a0557bbe0416b25abbf92454373658',
-            'redirect_uri': 'http://localhost:8000/kakao/token',
-            'code': request.query_params['code']
-        }
-        res = post('https://kauth.kakao.com/oauth/token', data=data)
-        res = post('https://kapi.kakao.com/v2/user/me',
-                   headers={'Authorization': 'Bearer ' + res.json()['access_token']})
-        return Response(res.json())
+    res = post('https://kauth.kakao.com/oauth/token', data=request.data)
+    return Response(res.json())
