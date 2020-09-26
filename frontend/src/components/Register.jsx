@@ -6,24 +6,27 @@ export default class Register extends React.Component {
     super(props);
     const offset = new Date().getTimezoneOffset() * 60000;
     var date = new Date(Date.now() - offset).toISOString().substring(0, 10);
-    console.log(date);
+    var dates = new Date().toISOString();
+    console.log(dates);
     var address = this.props.match.params.address;
     this.state = {
+      img: null,
       id: '',
       name: '',
       date: date,
       address: address,
       desc: '',
-      remark: ''
+      remark: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.setImage = this.setImage.bind(this);
   }
   handleChange(event) {
-    const {name, value} = event.target
+    const { name, value } = event.target;
     this.setState({
-      [name]: value
-    })
+      [name]: value,
+    });
     console.log(name, value);
     console.log(this.state);
   }
@@ -32,6 +35,7 @@ export default class Register extends React.Component {
     console.log(this.state);
     this.state.onSubmit(
       this.state.id,
+      this.state.img,
       this.state.name,
       this.state.date,
       this.state.address,
@@ -39,25 +43,57 @@ export default class Register extends React.Component {
       this.state.remark
     );
   }
+  setImage(event) {
+    this.setState({
+      img: event.target.files[0]
+    })
+    var reader = new FileReader;
+    var img = document.createElement("img");
+    reader.onloadend = function(event) {
+      img.setAttribute("src", event.target.result);
+      img.setAttribute("class", "cat-img ");
+      if (!document.querySelector(".img-container").classList.contains("img-exist")) {
+        document.querySelector(".img-container").classList.add("img-exist");
+      }
+      var imgExist = document.getElementsByClassName("cat-img");
+      console.log(imgExist);
+      if (imgExist.length >= 1) {
+        document.querySelector(".img-container").removeChild(imgExist[0]);
+      }
+      document.querySelector(".img-container").appendChild(img);
+    };
+    console.log(event.target.files);
+    if(event.target.files.length !== 0) {
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  }
   render() {
     return (
       <div className="register-container">
-        <h1 className="register-title">게시글 등록하기</h1>
+        <h1 className="register-title">냥이 등록하기</h1>
         <form action="Post" className="register-form" onSubmit={this.onSubmit} >
+          {/* 사진 */}
           <input type="text" className="upload-img-label" value="사진" disabled />
+          <div className="img-container"></div>
           <label htmlFor="register-img" className="upload-img">이미지 업로드</label>
-          <input type="file" id="register-img" name="img" accept="image/jpg, image/png" />
+          <input type="file" id="register-img" name="img" accept="image/*" onChange={this.setImage} required />
+          {/* 이름 */}
           <label htmlFor="register-name">이름</label>
-          <input type="text" id="register-name" className="input" name="name" onChange={this.handleChange} onChange={this.handleChange} />
+          <input type="text" id="register-name" className="input" name="name" onChange={this.handleChange} onChange={this.handleChange} required />
+          {/* 발견 날짜 */}
           <label htmlFor="register-date">발견 날짜</label>
-          <input type="date" id="register-date" className="input" name="date" value={this.state.date} onChange={this.handleChange} onChange={this.handleChange} />
+          <input type="date" id="register-date" className="input" name="date" value={this.state.date} onChange={this.handleChange} required />
+          {/* 주소 */}
           <label htmlFor="register-address">주소</label>
-          <input type="text" id="register-address" className="input" name="address" value={this.state.address} onChange={this.handleChange} />
+          <input type="text" id="register-address" className="input" name="address" value={this.state.address} onChange={this.handleChange} readOnly />
+          {/* 설명 */}
           <label htmlFor="register-desc">설명</label>
           <textarea name="" id="register-desc" className="input" name="desc" onChange={this.handleChange}></textarea>
+          {/* 특이사항 */}
           <label htmlFor="register-remark">특이사항</label>
           <textarea name="" id="register-remark" className="input" name="remark" onChange={this.handleChange}></textarea>
-          <button type="submit" className="submit-btn">수정하기</button>
+          {/* 등록 버튼 */}
+          <button type="submit" className="submit-btn">등록하기</button>
         </form>
       </div>
     )
