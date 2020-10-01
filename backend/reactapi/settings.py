@@ -24,7 +24,7 @@ SECRET_KEY = ')&$)o*buq##-&s!skkhvpty)%mvmp@=fag(rasqw=%yrwp74at'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -38,18 +38,22 @@ INSTALLED_APPS = [
     'post',  # 백엔드 app
     'rest_framework',  # 장고 REST 프레임워크
     'corsheaders',  # HTTP 접근제어 규약
-    'account.apps.AccountConfig',
+    'account',
+    'knox',
 ]
 
 REST_FRAMEWORK = {  # 장고 REST 프레임워크
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
-        #'rest_framework.permissions.IsAuthenticated',
+        # 'rest_framework.permissions.IsAuthenticated',
+        # 'rest_framework.permissions.IsAdminUser',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES' : (
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication' ,
-        'rest_framework.authentication.SessionAuthentication' ,
+        'knox.auth.TokenAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication' ,
         'rest_framework.authentication.BasicAuthentication' ,
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication' ,
     ),
 }
 

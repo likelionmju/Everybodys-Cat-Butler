@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('post.urls')),
     path('token-auth/', obtain_jwt_token),
     path('account/', include('account.urls')),
+    path('account/auth', include("knox.urls")),
 ]
